@@ -20,6 +20,8 @@ return new class extends Migration
             $table->enum('jenis_kelamin', ['L', 'P']);
             $table->string('alamat', 500);
             $table->string('no_hp', 15);
+            $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
         });
     }

@@ -22,5 +22,16 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@tri.my.id',
             'password' => bcrypt('123123')
         ]);
+
+        Karyawan::factory()->create([
+            'nik' => '123123',
+            'nama' => 'Kusuma',
+            'jabatan' => 'Staf',
+            'departemen' => 'IT',
+            'jenis_kelamin' => 'L',
+            'alamat' => 'Jl. Kusuma No. 123',
+            'no_hp' => '081234567890',
+            'password' => bcrypt('123123'),
+        ]);
     }
 }

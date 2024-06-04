@@ -24,7 +24,8 @@ class KaryawanFactory extends Factory
             'departemen' => $this->faker->word(),
             'jenis_kelamin' => $this->faker->randomElement(['L', 'P']),
             'alamat' => $this->faker->address(),
-            'no_hp' => $this->faker->e164PhoneNumber()
+            'no_hp' => $this->faker->e164PhoneNumber(),
+            'password' => bcrypt('789789'),
         ];
     }
 }
