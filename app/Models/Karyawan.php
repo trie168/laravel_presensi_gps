@@ -5,19 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Presensi extends Model
+class Karyawan extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'nik',
-        'tanggal',
-        'jam_masuk',
-        'jam_keluar'
+        'nama',
+        'jabatan',
+        'departemen',
+        'jenis_kelamin',
+        'alamat',
+        'no_hp'
     ];
-
-    public function karyawan()
-    {
-        return $this->belongsTo(Karyawan::class, 'nik', 'nik');
-    }
 }

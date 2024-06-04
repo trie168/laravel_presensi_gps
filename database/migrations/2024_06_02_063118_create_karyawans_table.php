@@ -11,14 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            //nik, jabatan, departemen, jenis_kelamin, alamat, no_hp
+        Schema::create('karyawans', function (Blueprint $table) {
+            $table->id();
             $table->string('nik', 10)->unique();
+            $table->string('nama', 255);
             $table->string('jabatan', 255);
             $table->string('departemen', 255);
             $table->enum('jenis_kelamin', ['L', 'P']);
             $table->string('alamat', 500);
             $table->string('no_hp', 15);
+            $table->timestamps();
         });
     }
 
@@ -27,14 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-            $table->dropColumn('nik');
-            $table->dropColumn('jabatan');
-            $table->dropColumn('departemen');
-            $table->dropColumn('jenis_kelamin');
-            $table->dropColumn('alamat');
-            $table->dropColumn('no_hp');
-        });
+        Schema::dropIfExists('karyawans');
     }
 };

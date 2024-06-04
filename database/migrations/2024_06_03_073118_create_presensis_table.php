@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('presensis', function (Blueprint $table) {
             $table->id();
-            // nik, tanggal, jam_masuk, jam_pulang, foto_masuk, foto_pulang
-            $table->foreignId('nik')->constrained('users')->onDelete('cascade');
+            // nik foreign key to karyawans table field nik
+            $table->string('nik', 10);
             $table->date('tanggal');
             $table->time('jam_masuk');
             $table->time('jam_pulang');

@@ -24,12 +24,6 @@ class UserFactory extends Factory
     {
         return [
             'name' => fake()->name(),
-            'nik' => fake()->unique()->numerify('##########'),
-            'jabatan' => fake()->jobTitle(),
-            'departemen' => fake()->word(),
-            'jenis_kelamin' => fake()->randomElement(['L', 'P']),
-            'alamat' => fake()->address(),
-            'no_hp' => fake()->e164PhoneNumber(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => static::$password ??= bcrypt('789789'),
